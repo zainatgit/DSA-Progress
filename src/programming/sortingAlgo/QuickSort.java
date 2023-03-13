@@ -3,7 +3,7 @@ package programming.sortingAlgo;
 
 public class QuickSort {
     public static void main(String[] args) {
-        int arr[] = {4,1,8,3,9,6,1,7};
+        int arr[] = {1,8,3,9,6,5,7};
         quickSort(arr,0,arr.length-1);
         printArray(arr);
     }
@@ -33,7 +33,9 @@ public class QuickSort {
             if(i<j)
                 swap(arr,i,j);
             }
-        swap(arr,l,j);
+        if(l!=j){ // No point of swapping same indexes
+            swap(arr,l,j);
+        }
         return j;
     }
 
