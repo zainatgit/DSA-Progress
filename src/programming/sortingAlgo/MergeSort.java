@@ -1,10 +1,12 @@
 package programming.sortingAlgo;
 
+import java.util.Arrays;
+
 public class MergeSort {
     public static void main(String[] args) {
         int arr[] = {4,1,8,5,2,9};
         mergeSort(arr,0,arr.length-1);
-        System.out.println(arr);
+        System.out.println(Arrays.toString(arr));
     }
 
     private static void mergeSort(int[] arr, int l, int r) {
@@ -21,7 +23,7 @@ public class MergeSort {
         int i = l;
         int j = mid+1;
         int k = l;
-        while(i<=mid && j>mid){
+        while(i<=mid && j<=r){
             if(arr[i] < arr[j]){
                 b[k] = arr[i];
                 i++;
@@ -32,7 +34,7 @@ public class MergeSort {
             k++;
         }
         if(i>mid){
-            while(j>mid) {
+            while(j<=r) {
                 b[k] = arr[j];
                 j++;k++;
             }

@@ -1,6 +1,6 @@
 package programming.linkedlist;
 
-public class MyLinkedList {
+public class MyLinkedList{
     private Node head;
 
     public Node getHead() {
