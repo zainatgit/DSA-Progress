@@ -1,31 +1,31 @@
 package programming;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Playground {
 
     public static void main(String[] args) {
-        List<Integer> numbers = List.of(12, 9, 13, 4, 6, 2, 4, 12, 15);
-        int[] num = {3,2,1,5,6,4};
-        List<String> stringList = List.of("Spring", "Spring Boot","AWS","Docker","Kubernetes","Microservices");
-        /*System.out.println(numbers.stream()
-                .reduce(0,(x,y)-> x+y*y));
-        System.out.println(numbers.stream().filter(x->x%2!=0).reduce(0,(x,y)->x+y));*/
-        //numbers.stream().distinct().forEach(System.out::println);
-        //stringList.stream().sorted(Comparator.comparing(x -> x.length())).forEach(System.out::println);
-        List<Integer> squaredList = populateResult(numbers, x->x*2);
-        squaredList.stream().forEach(System.out::println);
-        List<Integer> cubeList = populateResult(numbers, x->x*x*x);
-        cubeList.stream().forEach(System.out::println);
+        System.out.println("Hello World");
+        String str = "hannah";
+
+        //System.out.println(isPalindrome(str));
+        int num = 1000000000;
+        System.out.println(num*-10);
+        System.out.println(Integer.MAX_VALUE);
     }
 
-    public static List<Integer> populateResult(List<Integer> numberList, Function<Integer,Integer> function){
-        return numberList.stream().map(function).collect(Collectors.toList());
+    public static boolean isPalindrome(String str){
+        if(str.length() <= 1){
+            return true;
+        }
+        if(str.charAt(0) == str.charAt(str.length()-1)){
+            str = str.substring(1,str.length()-1);
+            isPalindrome(str);
+        }
+        return false;
     }
 }
 
